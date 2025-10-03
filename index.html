@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://db.onlinewebfonts.com/c/220147e374b92bbc92adf6110e25194c?family=English+111+Vivace+BT+V1"
+    rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-coklat: #a49684;
+      --color-coklatglp: #7f6441;
+      --color-cream: #e5e2da;
+      --color-creampth: #eeece7;
+      --color-lastslide: #e4e3e1;
+      
+    }
+    .font-latin {
+      font-family: 'English 111 Vivace BT V1', cursive;
+    }
+    .font-wedding {
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .font-cinzel {
+      font-family: "Cinzel", sans-serif;
+    }
+    .font-montserrat {
+      font-family: "Montserrat", sans-serif;
+    }
+
+    @keyframes leftSwing {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(-9deg); }
+      100% { transform: rotate(0deg); }
+    }
+    @keyframes rightSwing {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(9deg); }
+      100% { transform: rotate(0deg); }
+    }
+    @keyframes leftBottomSwing {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(-12deg); }
+      100% { transform: rotate(0deg); }
+    }
+    @keyframes rightBottomSwing {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(12deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .animate-leaf-left {
+      transform-origin: bottom left; /* pangkal daun di sudut kiri */
+      animation: leftSwing 9s ease-in-out infinite;
+    }
+
+    .animate-leaf-right {
+      transform-origin: bottom right; /* pangkal daun di sudut kiri */
+      animation: rightSwing 9s ease-in-out infinite;
+    }
+
+    .animate-leaf-bottom-right {
+      transform-origin: bottom right; /* pangkal daun di sudut kiri */
+      animation: rightBottomSwing 7s ease-in-out infinite;
+    }
+    .animate-leaf-bottom-left {
+      transform-origin: bottom right; /* pangkal daun di sudut kiri */
+      animation: leftBottomSwing 7s ease-in-out infinite;
+    }
+  </style>
+  <title>Wedding Invitation</title>
+</head>
+
+<body class="h-screen overflow-hidden bg-zinc-700">
+  <main id="wrapper" class="h-screen overflow-y-scroll snap-y snap-mandatory">
+    <article class="flex justify-center">
+      <div class="relative overflow-hidden w-full max-w-md">
+
+        <!-- COVER -->
+        <section id="cover" class="relative overflow-hidden h-[731px] snap-start">
+          <div class="h-[731px] bg-coklat w-full flex flex-col py-24 px-4 justify-between">
+            <div class="text-center">
+              <h1 class="mt-4 mb-2 text-[10px] lg:text-sm text-white tracking-[2px] font-sans">
+                THE WEDDING OF
+              </h1>
+              <h1 class="text-white font-latin text-2xl lg:text-4xl">
+                Fammy Fathiyah <br>&<br> Muhammad Yahya S.A.P
+              </h1>
+            </div>
+
+            <div class="flex flex-col items-center font-serif text-white mt-6">
+              <p class="text-sm">Kepada Yth:</p>
+              <p class="text-sm">Bapak/Ibu/Saudara/i</p>
+              <p class="font-serif tracking-tight text-white text-base">
+                <b>Nama Tamu</b>
+              </p>
+              <button id="openBtn" class="bg-coklatglp rounded-full px-4 py-2 mt-4 text-sm">
+                Open Invitation
+              </button>
+            </div>
+          </div>
+
+          <!-- dekorasi (posisi awal di luar layar, masuk pakai JS) -->
+          <img id="flowerTop" src="assets/flower-bottom.webp"
+            class="absolute top-10 left-1/2 -translate-x-1/2 flex w-35 opacity-0 -translate-y-20 transition-all duration-1000 ease-out">
+
+          <img id="flowerLeft" src="assets/bawa_pembuka.webp"
+            class="absolute bottom-[-25px] left-[-25px] w-30 opacity-0 -translate-x-20 transition-all duration-1000 ease-out">
+
+          <img id="flowerRight" src="assets/bawa_pembuka.webp"
+            class="absolute bottom-[-25px] right-[-25px] w-30 scale-x-[-1] opacity-0 translate-x-20 transition-all duration-1000 ease-out">
+        </section>
+
+        <!-- SECTION LAIN (DISembunyikan dulu) -->
+        <section id="pembuka" class="h-[731px] snap-start bg-cream flex items-center justify-center">
+          <div class="w-full h-full p-6 font-serif">
+            <div class="w-full h-full rounded-t-full bg-creampth flex items-center justify-center flex flex-col">
+              <h1 class="text-center px-6">
+                Dan bagaimana kamu akan mengambilnya kembali, padahal sebagian kamu telah bergaul (bercampur) dengan
+                yang lain sebagai suami-istri. Dan mereka (istri-istrimu) telah mengambil dari kamu perjanjian yang
+                kuat (mitsaqan ghalizha).
+              </h1>
+              <h1 class="mt-15 text-xl">An-Nisa 4 : 21</h1>
+              <img id="flowerTop" src="assets/flower-bottom.webp" class="scale-y-[-1] w-40 mt-5">
+            </div>
+          </div>
+        </section>
+        <section id="detail"
+          class="h-[731px] snap-start bg-no-repeat bg-center flex flex-col items-center justify-center relative font-serif"
+          style="background-image: url('./assets/bg-flower.webp'); background-size: 120% 120%;">
+
+          <h1 class="mt-15 text-3xl italic text-yellow-800 font-cinzel">THE BRIDE</h1>
+          <h1 class="text-center mx-18 my-6">
+            The pleasure of your company is requested
+            at the marriage of
+          </h1>
+          <h1 class="text-center px-6 text-3xl my-12 text-yellow-800">
+            Fammy Fathiyah
+          </h1>
+          <h1 class="text-center px-6 py-8">
+            Anak ke-6 dari dari pasangan
+            <br>Bapak Alm.Muchtar<br>
+            Dan ibu Nahda
+          </h1>
+        </section>
+        <section id="detail"
+          class="h-[731px] snap-start bg-center bg-cover flex flex-col items-center justify-center relative"
+          style="background-image: url('./assets/bg-flower.webp');">
+          <h1 class="mt-15 text-3xl italic text-yellow-800 font-cinzel">THE BRIDE</h1>
+          <h1 class="text-center mx-18 my-6">
+            The pleasure of your company is requested
+            at the marriage of
+          </h1>
+          <h1 class="text-center px-6 text-3xl my-12 text-yellow-800">
+            Muhammad Yahya S.A.P
+          </h1>
+          <h1 class="text-center px-6 py-8">
+            Anak Pertama dari pasangan
+            <br>Bapak H.Abdullah<br>
+            dan Ibu Hj.Haryani
+          </h1>
+        </section>
+        <section id="detail"
+          class="h-[731px] snap-start bg-center bg-cover overflow-hidden flex flex-col items-center justify-center relative"
+          style="background-image: url('./assets/bg-flower.webp');">
+          <div
+            class="w-full h-full px-12 md:px-18 sm:px-8 px-8 pb-2 z-[99] flex justify-center items-center font-cinzel">
+            <div class="w-[600px] h-[600px] max-w-full max-h-full  rounded-[190px] border-2 border-yellow-800 bg-white/50 
+flex flex-col items-center justify-center text-center p-6">
+
+
+              <!-- AKAD NIKAH -->
+              <div class="z-10">
+                <h1 class="text-xl text-yellow-800">AKAD NIKAH</h1>
+                <div class="font-sans">
+                  <h1>Rabu, 22 Oktober 2025</h1>
+                  <h1>11:00 - Selesai</h1>
+                  <h1>Mattoanging Jl. Bandang</h1>
+                </div>
+              </div>
+
+              <!-- garis + icon -->
+              <div class="relative w-full my-10">
+                <div class="h-[1px] w-full bg-black"></div>
+                <img src="/assets/burung.webp" alt="burung"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 h-[40px]">
+              </div>
+
+              <!-- RESEPSI -->
+              <div>
+                <h1 class="text-xl text-yellow-800">RESEPSI</h1>
+                <div class="font-sans">
+                  <h1>Rabu, 22 Oktober 2025</h1>
+                  <h1>12:00 - Selesai</h1>
+                  <h1>Mattoanging Jl. Bandang</h1>
+                </div>
+              </div>
+
+              <div class="relative w-full mt-6">
+                <div class="h-[0.1px] w-full bg-black"></div>
+                <img src="/assets/burung.webp" alt="burung"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 h-[40px]">
+              </div>
+
+              <!-- COUNTDOWN -->
+              <div class="flex justify-center font-sans gap-2 sm:gap-4 mt-8 text-center">
+                <!-- Hari -->
+                <div
+                  class="bg-coklatglp text-white rounded-lg px-3 sm:px-4 h-10 sm:h-12 w-12 sm:w-14 flex flex-col items-center justify-center">
+                  <div id="days" class="text-sm sm:text-md font-bold font-cinzel leading-none">00</div>
+                  <div class="text-[9px] sm:text-[10px] leading-none">Hari</div>
+                </div>
+
+                <!-- Jam -->
+                <div
+                  class="bg-coklatglp text-white rounded-lg px-3 sm:px-4 h-10 sm:h-12 w-12 sm:w-14 flex flex-col items-center justify-center">
+                  <div id="hours" class="text-sm sm:text-md font-bold font-cinzel leading-none">00</div>
+                  <div class="text-[9px] sm:text-[10px] leading-none">Jam</div>
+                </div>
+
+                <!-- Menit -->
+                <div
+                  class="bg-coklatglp text-white rounded-lg px-3 sm:px-4 h-10 sm:h-12 w-12 sm:w-14 flex flex-col items-center justify-center">
+                  <div id="minutes" class="text-sm sm:text-md font-bold font-cinzel leading-none">00</div>
+                  <div class="text-[9px] sm:text-[10px] leading-none">Menit</div>
+                </div>
+
+                <!-- Detik -->
+                <div
+                  class="bg-coklatglp text-white rounded-lg px-3 sm:px-4 h-10 sm:h-12 w-12 sm:w-14 flex flex-col items-center justify-center">
+                  <div id="seconds" class="text-sm sm:text-md font-bold font-cinzel leading-none">00</div>
+                  <div class="text-[9px] sm:text-[10px] leading-none">Detik</div>
+                </div>
+              </div>
+
+              <button
+                class="rounded-full bg-coklatglp text-white font-sans text-[13.5px] cursor-pointer mt-3 px-3 py-1">Add
+                to Calender</button>
+            </div>
+          </div>
+          <img id="flowerLeft" src="assets/tree-left.webp" class="absolute bottom-0 left-0 w-[210px] animate-leaf-left">
+          <img id="flowerLeft" src="assets/tree-right.webp"
+            class="absolute bottom-0 right-0 w-[210px] animate-leaf-right">
+
+          <img id="flowerLeft" src="assets/pink-left.webp"
+            class="absolute -top-15 -left-13 w-[210px] z-99 rotate-24 animate-leaf-left">
+          <img id="flowerLeft" src="assets/pink-right.webp"
+            class="absolute -top-15 -right-13 w-[210px] z-99 -rotate-24 animate-leaf-right">
+        </section>
+        <section id="detail"
+          class="h-[731px] snap-start bg-center bg-cover flex flex-col items-center justify-center relative"
+          style="background-image: url('./assets/bg-flower.webp');">
+
+          <h1 class="mb-5 text-3xl text-yellow-800 font-cinzel">Lokasi</h1>
+
+          <iframe class="w-[300px] h-[300px]"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3976.3660843166085!2d119.546406827867!3d-4.70630868225208!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbe49cf946b6577%3A0xbde56661904dbfd3!2sJl.%20Bandang%20No.56%2C%20Talaka%2C%20Kec.%20Ma&#39;rang%2C%20Kabupaten%20Pangkajene%20Dan%20Kepulauan%2C%20Sulawesi%20Selatan%2090653!5e0!3m2!1sid!2sid!4v1759476573101!5m2!1sid!2sid"
+            width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          <p class="text-center mt-2 text-[10px] font-sans">Mattoanging Jl.Bandang <br>Kel.Talaka Kec.Ma'rang Kab.
+            Pangkep</p>
+          <a href="https://www.google.com/maps/search/Jl.%20Bandang%20No.56%2C%20Talaka%2C%20Kec.%20Ma%27rang%2C%20Kabupaten%20Pangkajene%20Dan%20Kepulauan%2C%20Sulawesi%20Selatan%2090653%2C%20Indonesia/@-4.70630868225208,119.546406827867,17z"
+            target="_blank">
+            <button
+              class="rounded-full bg-coklatglp text-white font-sans text-[15px] cursor-pointer mt-3 px-3 py-2 mb-6">
+              Petunjuk Ke Lokasi
+            </button>
+          </a>
+          <img id="pilarKiri" src="assets/pilar-kiri.webp" class="absolute w-[155px] left-0 ">
+          <img id="pilarKiri" src="assets/pilar-kanan.webp" class="absolute w-[155px] right-0 ">
+        </section>
+        <section id="detail"
+          class="h-[731px] snap-start bg-center bg-cover flex flex-col px-8 items-center justify-center relative"
+          style="background-image: url('./assets/bg-last.webp');">
+
+          <div
+            class="flex flex-col font-cinzel bg-white/80 border rounded-md pt-5 border-yellow-800 justify-center items-center w-full">
+            <h1 class="text-2xl text-yellow-800">BEST WISHES</h1>
+            <p class="text-[10px] italic font-serif mb-4">Sampaikan doa dan ucapan terbaik anda </p>
+            <div class="h-[1px] bg-black"></div>
+            <form id="ucapanForm" class="font-sans flex flex-col gap-4 w-full px-4">
+
+              <!-- Input -->
+              <input type="text" name="nama" placeholder="Nama"
+                class="py-1 px-2 border border-gray-400 rounded-sm focus:bg-white/50 focus:border-yellow-800 outline-none"
+                required />
+
+              <textarea name="pesan" placeholder="Ucapan"
+                class="py-1 px-2 border border-gray-400 rounded-sm focus:bg-white/50 focus:border-yellow-800 outline-none w-full h-24 resize-none"></textarea>
+
+              <!-- Button -->
+              <button type="submit"
+                class="w-fit rounded-sm bg-coklatglp text-white font-sans text-[15px] cursor-pointer px-6 py-2 mb-6">
+                Kirim
+              </button>
+            </form>
+          </div>
+        </section>
+        <section id="detail"
+          class="min-h-screen snap-start bg-center bg-cover bg-lastslide flex flex-col px-8 items-center justify-center relative">
+          <div class="text-center font-serif mx-2 text-black/60">
+            We would like to thank for sharing in our wedding Celebration. We are grateful for your presence, warm, and
+            wishes. we look forward to our future together and making more memories with you.
+          </div>
+          <div class="font-wedding text-2xl text-yellow-800/60 mt-4 mb-8">Fammy & Yahya</div>
+          <div class="font-serif font-bold text-[8px] text-black/40">Music : </div>
+          <div class="font-serif text-[10px] text-black/40 mb-14">Menjaga Hati</div>
+
+          <img id="flowerLeft" src="assets/middle-bottom.webp" class="absolute bottom-0">
+
+          <!-- Kiri -->
+          <img src="assets/bf-2.webp" class="absolute left-10 w-[90px] z-[9] -bottom-2 animate-leaf-bottom-right">
+          <img src="assets/bf-1.webp" class="absolute left-17 w-[90px] -bottom-2 animate-leaf-right">
+          <img src="assets/bf-3.webp" class="absolute left-24 w-[90px] -bottom-2 animate-leaf-right">
+
+          <!-- Kanan (cermin dari kiri) -->
+          <img src="assets/bf-2.webp"
+            class="absolute w-[90px] scale-x-[-1] z-[9] right-30 -bottom-2 animate-leaf-bottom-right">
+          <img src="assets/bf-1.webp" class="absolute right-37 w-[90px] scale-x-[-1] -bottom-2 animate-leaf-right">
+          <img src="assets/bf-3.webp" class="absolute right-45 w-[90px] scale-x-[-1] -bottom-2 animate-leaf-right">
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    const openBtn = document.getElementById("openBtn");
+    const sections = document.querySelectorAll("section:not(#cover)");
+
+    openBtn.addEventListener("click", () => {
+      // tampilkan semua section lain
+      sections.forEach(sec => sec.classList.remove("hidden"));
+      // scroll otomatis ke halaman pembuka
+      openBtn.classList.add("hidden");
+      document.getElementById("pembuka").scrollIntoView({ behavior: "smooth" });
+    });
+
+    window.addEventListener("load", () => {
+      // kasih delay biar animasi lebih enak
+      setTimeout(() => {
+        document.getElementById("flowerTop").classList.remove("opacity-0", "-translate-y-20");
+        document.getElementById("flowerLeft").classList.remove("opacity-0", "-translate-x-20");
+        document.getElementById("flowerRight").classList.remove("opacity-0", "translate-x-20");
+      }, 300); // delay 0.3s
+    });
+
+    // 1. Target date: 22 Oktober 2025, pukul 11:00 WITA (UTC+8)
+    const targetDate = new Date('2025-10-22T03:00:00Z');
+    // Catatan: 11:00 WITA = 03:00 UTC
+
+    // 2. Update setiap detik
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now; // selisih dalam milidetik
+
+      if (diff <= 0) {
+        daysEl.textContent = '00';
+        hoursEl.textContent = '00';
+        minutesEl.textContent = '00';
+        secondsEl.textContent = '00';
+        clearInterval(interval);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      daysEl.textContent = days.toString().padStart(2, '0');
+      hoursEl.textContent = hours.toString().padStart(2, '0');
+      minutesEl.textContent = minutes.toString().padStart(2, '0');
+      secondsEl.textContent = seconds.toString().padStart(2, '0');
+    }
+
+    updateCountdown(); // jalankan langsung
+    const interval = setInterval(updateCountdown, 1000);
+
+    document.getElementById("ucapanForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const data = {
+        nama: e.target.nama.value,
+        pesan: e.target.pesan.value
+      };
+
+      await fetch("https://script.google.com/macros/s/AKfycbxntFrA5lsgMhvjnmiUuA3B5T8Gr_sM8EFf2-wF1Y9UVelsXIviw9Xs_3PNxfQsUo8rPw/exec", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" }
+      });
+
+      alert("Ucapan terkirim!");
+      e.target.reset();
+    });
+  </script>
+</body>
+
+</html>

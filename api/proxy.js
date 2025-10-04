@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
   // URL Google Apps Script kamu
-  const GAS_URL = "https://script.google.com/macros/s/AKfycbxntFrA5lsgMhvjnmiUuA3B5T8Gr_sM8EFf2-wF1Y9UVelsXIviw9Xs_3PNxfQsUo8rPw/exec";
+  const GAS_URL = "https://script.google.com/macros/s/AKfycbxWNix9G4-mDEMN0RpCY8GCMXVPaiz4EovGkbNKfdJy9ywQOIOtwaNmZOCMo1Y0t67mqg/exec";
 
   try {
     const response = await fetch(GAS_URL, {

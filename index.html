@@ -453,13 +453,10 @@ flex flex-col items-center justify-center text-center p-6" data-aos="zoom-in" da
       loadingContent.classList.remove("hidden");
 
       try {
-        const res = await fetch('https://script.google.com/macros/s/AKfycbwau3brAbEAoQMUGw72kbfBRWv_XMwPiGEncWX9N792ECMZwrtQ6nHo72Qmu9qZvBGlMw/exec', {
+        const res = await fetch('https://script.google.com/macros/s/AKfycbwNhGB2hUE7w7DvEAyN3qASn5stDINZODmeCC7YMMlAR_HOR1nzTtTuQ-woFMdhICNcAw/exec', {
           redirect: "follow",
           body: new FormData(form),
           method: "POST",
-          headers: {
-            "Content-Type": "text/plain;charset=utf-8",
-          },
         });
 
         if (!res.ok) throw new Error('Respon server tidak OK');

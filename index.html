@@ -453,9 +453,14 @@ flex flex-col items-center justify-center text-center p-6" data-aos="zoom-in" da
       loadingContent.classList.remove("hidden");
 
       try {
-        const res = await fetch('https://script.google.com/macros/s/AKfycbwNhGB2hUE7w7DvEAyN3qASn5stDINZODmeCC7YMMlAR_HOR1nzTtTuQ-woFMdhICNcAw/exec', {
+        const res = await fetch('https://script.google.com/macros/s/AKfycbyacS5K-PNsTos9BYtZMCm8hm1gB0Yvqf82awgNbzWNAGL_YDjemzC9ZKVf1GFEK402hg/exec', {
           redirect: "follow",
-          body: new FormData(form),
+          headers: {
+            'Content-Type': 'text/plain',
+          },
+          mode: "no-cors",
+
+          body: JSON.stringify(form),
           method: "POST",
         });
 

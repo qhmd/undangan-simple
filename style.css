@@ -1,0 +1,95 @@
+.font-latin {
+  font-family: 'English 111 Vivace BT V1', cursive;
+}
+
+.font-wedding {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-cinzel {
+  font-family: "Cinzel", sans-serif;
+}
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+@keyframes leftSwing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-9deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rightSwing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(9deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes leftBottomSwing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-12deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rightBottomSwing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(12deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-leaf-left {
+  transform-origin: bottom left;
+  /* pangkal daun di sudut kiri */
+  animation: leftSwing 9s ease-in-out infinite;
+}
+
+.animate-leaf-right {
+  transform-origin: bottom right;
+  /* pangkal daun di sudut kiri */
+  animation: rightSwing 9s ease-in-out infinite;
+}
+
+.animate-leaf-bottom-right {
+  transform-origin: bottom right;
+  /* pangkal daun di sudut kiri */
+  animation: rightBottomSwing 7s ease-in-out infinite;
+}
+
+.animate-leaf-bottom-left {
+  transform-origin: bottom right;
+  /* pangkal daun di sudut kiri */
+  animation: leftBottomSwing 7s ease-in-out infinite;
+}

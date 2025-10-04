@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-
-
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style.css">
   <style type="text/tailwindcss">
     @theme {
       --color-coklat: #a49684;
@@ -22,74 +22,51 @@
       --color-cream: #e5e2da;
       --color-creampth: #eeece7;
       --color-lastslide: #e4e3e1;
-      
     }
-    .font-latin {
-      font-family: 'English 111 Vivace BT V1', cursive;
-    }
-    .font-wedding {
-      font-family: 'Great Vibes', cursive;
-    }
+/* State awal sebelum animasi aktif */
+[data-aos="custom-fade-down"] {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
 
-    .font-cinzel {
-      font-family: "Cinzel", sans-serif;
-    }
-    .font-montserrat {
-      font-family: "Montserrat", sans-serif;
-    }
+[data-aos="custom-fade-down"] {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
 
-    @keyframes leftSwing {
-      0% { transform: rotate(0deg); }
-      50% { transform: rotate(-9deg); }
-      100% { transform: rotate(0deg); }
-    }
-    @keyframes rightSwing {
-      0% { transform: rotate(0deg); }
-      50% { transform: rotate(9deg); }
-      100% { transform: rotate(0deg); }
-    }
-    @keyframes leftBottomSwing {
-      0% { transform: rotate(0deg); }
-      50% { transform: rotate(-12deg); }
-      100% { transform: rotate(0deg); }
-    }
-    @keyframes rightBottomSwing {
-      0% { transform: rotate(0deg); }
-      50% { transform: rotate(12deg); }
-      100% { transform: rotate(0deg); }
-    }
+[data-aos="custom-fade-down"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .animate-leaf-left {
-      transform-origin: bottom left; /* pangkal daun di sudut kiri */
-      animation: leftSwing 9s ease-in-out infinite;
-    }
-
-    .animate-leaf-right {
-      transform-origin: bottom right; /* pangkal daun di sudut kiri */
-      animation: rightSwing 9s ease-in-out infinite;
-    }
-
-    .animate-leaf-bottom-right {
-      transform-origin: bottom right; /* pangkal daun di sudut kiri */
-      animation: rightBottomSwing 7s ease-in-out infinite;
-    }
-    .animate-leaf-bottom-left {
-      transform-origin: bottom right; /* pangkal daun di sudut kiri */
-      animation: leftBottomSwing 7s ease-in-out infinite;
-    }
+@keyframes customFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   </style>
   <title>Wedding Invitation</title>
 </head>
 
-<body class="h-screen overflow-hidden bg-zinc-700">
-  <main id="wrapper" class="h-screen overflow-y-scroll snap-y snap-mandatory">
+<body class="h-screen overflow-hidden bg-zinc-700 overflow-y-scroll">
+  <main id="wrapper" class="h-screen snap-y snap-mandatory">
+
     <article class="flex justify-center">
       <div class="relative overflow-hidden w-full max-w-md">
 
         <!-- COVER -->
-        <section id="cover" class="relative overflow-hidden h-[731px] snap-start">
-          <div class="h-[731px] bg-coklat w-full flex flex-col py-24 px-4 justify-between">
+        <section id="cover" class="relative overflow-hidden h-screen snap-start">
+          <div class="h-screen bg-coklat w-full flex flex-col py-24 px-4 justify-around">
             <div class="text-center">
+
+              <!-- ISI UTAMA -->
               <h1 class="mt-4 mb-2 text-[10px] lg:text-sm text-white tracking-[2px] font-sans">
                 THE WEDDING OF
               </h1>
@@ -97,7 +74,6 @@
                 Fammy Fathiyah <br>&<br> Muhammad Yahya S.A.P
               </h1>
             </div>
-
             <div class="flex flex-col items-center font-serif text-white mt-6">
               <p class="text-sm">Kepada Yth:</p>
               <p class="text-sm">Bapak/Ibu/Saudara/i</p>
@@ -110,79 +86,97 @@
             </div>
           </div>
 
-          <!-- dekorasi (posisi awal di luar layar, masuk pakai JS) -->
+          <!-- Gambar Dekorasi -->
           <img id="flowerTop" src="assets/flower-bottom.webp"
-            class="absolute top-10 left-1/2 -translate-x-1/2 flex w-35 opacity-0 -translate-y-20 transition-all duration-1000 ease-out">
+            class="absolute top-10 left-1/2 -translate-x-1/2 flex w-35" data-aos="fade-down" data-aos-duration="1000">
 
           <img id="flowerLeft" src="assets/bawa_pembuka.webp"
-            class="absolute bottom-[-25px] left-[-25px] w-30 opacity-0 -translate-x-20 transition-all duration-1000 ease-out">
+            class="absolute bottom-[-25px] left-[-25px] w-30 opacity-0" data-aos="fade-up-right" data-aos-offset="50" data-aos-duration="1000">
 
           <img id="flowerRight" src="assets/bawa_pembuka.webp"
-            class="absolute bottom-[-25px] right-[-25px] w-30 scale-x-[-1] opacity-0 translate-x-20 transition-all duration-1000 ease-out">
+            class="absolute bottom-[-25px] right-[-25px] w-30 scale-x-[-1]"  data-aos="fade-up-right" data-aos-offset="50" data-aos-duration="1000">
         </section>
 
+
         <!-- SECTION LAIN (DISembunyikan dulu) -->
+        <!-- SECTION DO'A -->
         <section id="pembuka" class="h-[731px] snap-start bg-cream flex items-center justify-center">
           <div class="w-full h-full p-6 font-serif">
-            <div class="w-full h-full rounded-t-full bg-creampth flex items-center justify-center flex flex-col">
-              <h1 class="text-center px-6">
+            <div class="w-full h-full rounded-t-full bg-creampth items-center justify-center flex flex-col">
+
+              <h1 data-aos="fade-up" data-aos-duration="2000" class="text-center px-6">
                 Dan bagaimana kamu akan mengambilnya kembali, padahal sebagian kamu telah bergaul (bercampur) dengan
                 yang lain sebagai suami-istri. Dan mereka (istri-istrimu) telah mengambil dari kamu perjanjian yang
                 kuat (mitsaqan ghalizha).
               </h1>
-              <h1 class="mt-15 text-xl">An-Nisa 4 : 21</h1>
-              <img id="flowerTop" src="assets/flower-bottom.webp" class="scale-y-[-1] w-40 mt-5">
+
+              <h1 class="mt-15 text-xl" data-aos="fade-up" data-aos-duration="2000">An-Nisa 4 : 21</h1>
+              <img id="flowerTop" data-aos="fade-down" data-aos-duration="2000" src="assets/flower-bottom.webp"
+                class="scale-y-[-1] w-40 mt-5">
             </div>
           </div>
         </section>
+
+        <!-- SECTION NAMA MEMPELAI WANITA-->
         <section id="detail"
-          class="h-[731px] snap-start bg-no-repeat bg-center flex flex-col items-center justify-center relative font-serif"
+          class="h-[731px] snap-start bg-no-repeat bg-center font-serif flex flex-col items-center justify-center relative font-serif"
           style="background-image: url('./assets/bg-flower.webp'); background-size: 120% 120%;">
 
-          <h1 class="mt-15 text-3xl italic text-yellow-800 font-cinzel">THE BRIDE</h1>
-          <h1 class="text-center mx-18 my-6">
+          <h1 class="mt-15 text-3xl italic text-yellow-800 font-cinzel" data-aos="fade-down" data-aos-duration="2500">
+            THE BRIDE</h1>
+          <h1 class="text-center mx-18 my-6" data-aos="fade-down" data-aos-duration="2500" data-aos-delay="200">
             The pleasure of your company is requested
             at the marriage of
           </h1>
-          <h1 class="text-center px-6 text-3xl my-12 text-yellow-800">
+
+          <h1 class="text-center px-6 text-3xl my-12 text-yellow-800" data-aos="fade-up" data-aos-duration="2500"
+            data-aos-delay="200">
             Fammy Fathiyah
           </h1>
-          <h1 class="text-center px-6 py-8">
+          <h1 class="text-center px-6 py-8" data-aos="fade-up" data-aos-duration="2500">
             Anak ke-6 dari dari pasangan
             <br>Bapak Alm.Muchtar<br>
             Dan ibu Nahda
           </h1>
         </section>
+
+        <!-- SECTION NAMA MEMPELAI PRIA-->
+
         <section id="detail"
-          class="h-[731px] snap-start bg-center bg-cover flex flex-col items-center justify-center relative"
+          class="h-[731px] snap-start bg-center bg-cover flex font-serif flex-col items-center justify-center relative"
           style="background-image: url('./assets/bg-flower.webp');">
-          <h1 class="mt-15 text-3xl italic text-yellow-800 font-cinzel">THE BRIDE</h1>
-          <h1 class="text-center mx-18 my-6">
+          <h1 class="mt-15 text-3xl italic text-yellow-800 font-cinzel" data-aos="fade-down" data-aos-duration="2500">
+            THE GROOM</h1>
+          <h1 class="text-center mx-18 my-6" data-aos="fade-down" data-aos-duration="2500" data-aos-delay="200">
             The pleasure of your company is requested
             at the marriage of
           </h1>
-          <h1 class="text-center px-6 text-3xl my-12 text-yellow-800">
+          <h1 class="text-center px-6 text-3xl my-12 text-yellow-800" data-aos="fade-up" data-aos-duration="2500"
+            data-aos-delay="400">
             Muhammad Yahya S.A.P
           </h1>
-          <h1 class="text-center px-6 py-8">
+          <h1 class="text-center px-6 py-8" data-aos="fade-up" data-aos-duration="2500">
             Anak Pertama dari pasangan
             <br>Bapak H.Abdullah<br>
             dan Ibu Hj.Haryani
           </h1>
         </section>
+
+        <!-- DETAIL NIKAH -->
         <section id="detail"
           class="h-[731px] snap-start bg-center bg-cover overflow-hidden flex flex-col items-center justify-center relative"
           style="background-image: url('./assets/bg-flower.webp');">
           <div
             class="w-full h-full px-12 md:px-18 sm:px-8 px-8 pb-2 z-[99] flex justify-center items-center font-cinzel">
-            <div class="w-[600px] h-[600px] max-w-full max-h-full  rounded-[190px] border-2 border-yellow-800 bg-white/50 
-flex flex-col items-center justify-center text-center p-6">
+            <div class="w-[600px] h-[600px] max-w-full max-h-full rounded-[190px] border-2 border-yellow-800 bg-white/50 
+flex flex-col items-center justify-center text-center p-6" data-aos="zoom-in" data-aos-duration="2000">
 
 
               <!-- AKAD NIKAH -->
               <div class="z-10">
-                <h1 class="text-xl text-yellow-800">AKAD NIKAH</h1>
-                <div class="font-sans">
+                <h1 class="text-3xl text-yellow-800" data-aos="fade" data-aos-delay="200" data-aos-duration="1000">AKAD
+                  NIKAH</h1>
+                <div class="font-serif" data-aos="custom-fade-down" data-aos-duration="3000">
                   <h1>Rabu, 22 Oktober 2025</h1>
                   <h1>11:00 - Selesai</h1>
                   <h1>Mattoanging Jl. Bandang</h1>
@@ -191,15 +185,16 @@ flex flex-col items-center justify-center text-center p-6">
 
               <!-- garis + icon -->
               <div class="relative w-full my-10">
-                <div class="h-[1px] w-full bg-black"></div>
+                <div class="h-[1px] w-full bg-black" data-aos="fade-up" data-aos-duration="2000"></div>
                 <img src="/assets/burung.webp" alt="burung"
-                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 h-[40px]">
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 h-[40px]"
+                  data-aos="fade-up" data-aos-duration="2300" data-aos-delay="200">
               </div>
 
               <!-- RESEPSI -->
               <div>
-                <h1 class="text-xl text-yellow-800">RESEPSI</h1>
-                <div class="font-sans">
+                <h1 class="text-3xl text-yellow-800" data-aos="fade" data-aos-duration="1000" >RESEPSI</h1>
+                <div class="font-serif" data-aos="custom-fade-down" data-aos-duration="3000" data-aos-delay="200">
                   <h1>Rabu, 22 Oktober 2025</h1>
                   <h1>12:00 - Selesai</h1>
                   <h1>Mattoanging Jl. Bandang</h1>
@@ -209,83 +204,97 @@ flex flex-col items-center justify-center text-center p-6">
               <div class="relative w-full mt-6">
                 <div class="h-[0.1px] w-full bg-black"></div>
                 <img src="/assets/burung.webp" alt="burung"
-                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 h-[40px]">
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 h-[40px]"
+                  data-aos="fade-up" data-aos-duration="2000">
               </div>
-
               <!-- COUNTDOWN -->
-              <div class="flex justify-center font-sans gap-2 sm:gap-4 mt-8 text-center">
+              <div class="flex justify-center font-sans gap-2 sm:gap-4 mt-8 text-center" data-aos="fade-up"
+                data-aos-duration="2000" data-aos-delay="200">
                 <!-- Hari -->
                 <div
                   class="bg-coklatglp text-white rounded-lg px-3 sm:px-4 h-10 sm:h-12 w-12 sm:w-14 flex flex-col items-center justify-center">
-                  <div id="days" class="text-sm sm:text-md font-bold font-cinzel leading-none">00</div>
+                  <div id="days" class="text-xl sm:text-2xl font-bold font-cinzel leading-none">00</div>
                   <div class="text-[9px] sm:text-[10px] leading-none">Hari</div>
                 </div>
 
                 <!-- Jam -->
                 <div
                   class="bg-coklatglp text-white rounded-lg px-3 sm:px-4 h-10 sm:h-12 w-12 sm:w-14 flex flex-col items-center justify-center">
-                  <div id="hours" class="text-sm sm:text-md font-bold font-cinzel leading-none">00</div>
+                  <div id="hours" class="text-xl sm:text-2xl font-bold font-cinzel leading-none">00</div>
                   <div class="text-[9px] sm:text-[10px] leading-none">Jam</div>
                 </div>
 
                 <!-- Menit -->
                 <div
                   class="bg-coklatglp text-white rounded-lg px-3 sm:px-4 h-10 sm:h-12 w-12 sm:w-14 flex flex-col items-center justify-center">
-                  <div id="minutes" class="text-sm sm:text-md font-bold font-cinzel leading-none">00</div>
+                  <div id="minutes" class="text-xl sm:text-2xl font-bold font-cinzel leading-none">00</div>
                   <div class="text-[9px] sm:text-[10px] leading-none">Menit</div>
                 </div>
 
                 <!-- Detik -->
                 <div
                   class="bg-coklatglp text-white rounded-lg px-3 sm:px-4 h-10 sm:h-12 w-12 sm:w-14 flex flex-col items-center justify-center">
-                  <div id="seconds" class="text-sm sm:text-md font-bold font-cinzel leading-none">00</div>
+                  <div id="seconds" class="text-xl sm:text-2xl font-bold font-cinzel leading-none">00</div>
                   <div class="text-[9px] sm:text-[10px] leading-none">Detik</div>
                 </div>
               </div>
 
-              <button
-                class="rounded-full bg-coklatglp text-white font-sans text-[13.5px] cursor-pointer mt-3 px-3 py-1">Add
+              <button class="rounded-full bg-coklatglp text-white font-serif text-[13.5px] cursor-pointer mt-3 px-3 py-2"
+                data-aos-delay="400" data-aos="fade-up" data-aos-duration="2000">Add
                 to Calender</button>
             </div>
           </div>
-          <img id="flowerLeft" src="assets/tree-left.webp" class="absolute bottom-0 left-0 w-[210px] animate-leaf-left">
-          <img id="flowerLeft" src="assets/tree-right.webp"
-            class="absolute bottom-0 right-0 w-[210px] animate-leaf-right">
+          <div class="absolute bottom-0 left-0" data-aos="fade-up-right" data-aos-duration="2000">
+            <img id="flowerLeft" src="assets/tree-left.webp" class="w-[210px] animate-leaf-left" >
+          </div>
+            
+          <div class="absolute bottom-0 right-0" data-aos="fade-up-left" data-aos-duration="2000">
+            <img id="flowerLeft" src="assets/tree-right.webp"
+              class=" w-[210px] animate-leaf-right">
+          </div>
 
           <img id="flowerLeft" src="assets/pink-left.webp"
             class="absolute -top-15 -left-13 w-[210px] z-99 rotate-24 animate-leaf-left">
           <img id="flowerLeft" src="assets/pink-right.webp"
             class="absolute -top-15 -right-13 w-[210px] z-99 -rotate-24 animate-leaf-right">
         </section>
+        
+        <!-- SECTION LOKASI -->
         <section id="detail"
           class="h-[731px] snap-start bg-center bg-cover flex flex-col items-center justify-center relative"
           style="background-image: url('./assets/bg-flower.webp');">
 
-          <h1 class="mb-5 text-3xl text-yellow-800 font-cinzel">Lokasi</h1>
+          <h1 class="mb-5 text-3xl text-yellow-800 font-cinzel" data-aos="fade-down" data-aos-duration="2000">Lokasi</h1>
 
-          <iframe class="w-[300px] h-[300px]"
+          <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3976.3660843166085!2d119.546406827867!3d-4.70630868225208!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbe49cf946b6577%3A0xbde56661904dbfd3!2sJl.%20Bandang%20No.56%2C%20Talaka%2C%20Kec.%20Ma&#39;rang%2C%20Kabupaten%20Pangkajene%20Dan%20Kepulauan%2C%20Sulawesi%20Selatan%2090653!5e0!3m2!1sid!2sid!4v1759476573101!5m2!1sid!2sid"
             width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            referrerpolicy="no-referrer-when-downgrade" data-aos="fade-down" data-aos-duration="2500"></iframe>
 
-          <p class="text-center mt-2 text-[10px] font-sans">Mattoanging Jl.Bandang <br>Kel.Talaka Kec.Ma'rang Kab.
+          <p class="text-center mt-2 text-[12px] font-serif" data-aos="fade-up" data-aos-duration="2300">Mattoanging Jl.Bandang <br>Kel.Talaka Kec.Ma'rang Kab.
             Pangkep</p>
           <a href="https://www.google.com/maps/search/Jl.%20Bandang%20No.56%2C%20Talaka%2C%20Kec.%20Ma%27rang%2C%20Kabupaten%20Pangkajene%20Dan%20Kepulauan%2C%20Sulawesi%20Selatan%2090653%2C%20Indonesia/@-4.70630868225208,119.546406827867,17z"
             target="_blank">
             <button
-              class="rounded-full bg-coklatglp text-white font-sans text-[15px] cursor-pointer mt-3 px-3 py-2 mb-6">
+              class="rounded-full bg-coklatglp text-white font-serif text-[15px] cursor-pointer mt-3 px-3 py-2 mb-6" data-aos="fade-up" data-aos-duration="2300" data-aos-delay="200">
               Petunjuk Ke Lokasi
             </button>
           </a>
-          <img id="pilarKiri" src="assets/pilar-kiri.webp" class="absolute w-[155px] left-0 ">
-          <img id="pilarKiri" src="assets/pilar-kanan.webp" class="absolute w-[155px] right-0 ">
+
+          <div class="absolute left-0" data-aos="fade-right" data-aos-duration="1500">
+            <img id="pilarKiri" src="assets/pilar-kiri.webp" class=" w-[205px]">
+          </div>
+          <div class="absolute right-0" data-aos="fade-left" data-aos-duration="1500">
+            <img id="pilarKiri" src="assets/pilar-kanan.webp" class="w-[205px]">
+          </div>
+        
         </section>
         <section id="detail"
           class="h-[731px] snap-start bg-center bg-cover flex flex-col px-8 items-center justify-center relative"
           style="background-image: url('./assets/bg-last.webp');">
 
           <div
-            class="flex flex-col font-cinzel bg-white/80 border rounded-md pt-5 border-yellow-800 justify-center items-center w-full">
+            class="flex flex-col font-cinzel bg-white/80 border rounded-md pt-5 border-yellow-800 justify-center items-center w-full" data-aos="zoom-in" data-aos-duration="1500">
             <h1 class="text-2xl text-yellow-800">BEST WISHES</h1>
             <p class="text-[10px] italic font-serif mb-4">Sampaikan doa dan ucapan terbaik anda </p>
             <div class="h-[1px] bg-black"></div>
@@ -307,24 +316,30 @@ flex flex-col items-center justify-center text-center p-6">
             </form>
           </div>
         </section>
+
+
         <section id="detail"
           class="min-h-screen snap-start bg-center bg-cover bg-lastslide flex flex-col px-8 items-center justify-center relative">
-          <div class="text-center font-serif mx-2 text-black/60">
+          <div class="text-center font-serif mx-2 text-black/60" data-aos="fade-down" data-aos-duration="1500">
             We would like to thank for sharing in our wedding Celebration. We are grateful for your presence, warm, and
             wishes. we look forward to our future together and making more memories with you.
           </div>
-          <div class="font-wedding text-2xl text-yellow-800/60 mt-4 mb-8">Fammy & Yahya</div>
-          <div class="font-serif font-bold text-[8px] text-black/40">Music : </div>
-          <div class="font-serif text-[10px] text-black/40 mb-14">Menjaga Hati</div>
 
-          <img id="flowerLeft" src="assets/middle-bottom.webp" class="absolute bottom-0">
+          <div class="font-wedding text-2xl text-yellow-800/60 mt-4 mb-8" data-aos="fade-down" data-aos-duration="1600">Fammy & Yahya</div>
+          <div class="font-serif font-bold text-[8px] text-black/40" data-aos="fade-up" data-aos-duration="1500">Music : </div>
+          <div class="font-serif text-[10px] text-black/40 mb-14" data-aos="fade-up" data-aos-duration="1600">Menjaga Hati</div>
+
+          <img id="flowerLeft" src="assets/middle-bottom.webp" class="absolute bottom-0" >
 
           <!-- Kiri -->
+  
+
           <img src="assets/bf-2.webp" class="absolute left-10 w-[90px] z-[9] -bottom-2 animate-leaf-bottom-right">
           <img src="assets/bf-1.webp" class="absolute left-17 w-[90px] -bottom-2 animate-leaf-right">
-          <img src="assets/bf-3.webp" class="absolute left-24 w-[90px] -bottom-2 animate-leaf-right">
+          <img src="assets/bf-3.webp" class="absolute left-24 w-[90px] -bottom-2 animate-leaf-right" >
 
           <!-- Kanan (cermin dari kiri) -->
+           
           <img src="assets/bf-2.webp"
             class="absolute w-[90px] scale-x-[-1] z-[9] right-30 -bottom-2 animate-leaf-bottom-right">
           <img src="assets/bf-1.webp" class="absolute right-37 w-[90px] scale-x-[-1] -bottom-2 animate-leaf-right">
@@ -333,18 +348,19 @@ flex flex-col items-center justify-center text-center p-6">
       </div>
     </article>
   </main>
-
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
+    AOS.init();
     const openBtn = document.getElementById("openBtn");
     const sections = document.querySelectorAll("section:not(#cover)");
 
     openBtn.addEventListener("click", () => {
-      // tampilkan semua section lain
       sections.forEach(sec => sec.classList.remove("hidden"));
-      // scroll otomatis ke halaman pembuka
       openBtn.classList.add("hidden");
       document.getElementById("pembuka").scrollIntoView({ behavior: "smooth" });
+
     });
+
 
     window.addEventListener("load", () => {
       // kasih delay biar animasi lebih enak
@@ -354,6 +370,8 @@ flex flex-col items-center justify-center text-center p-6">
         document.getElementById("flowerRight").classList.remove("opacity-0", "translate-x-20");
       }, 300); // delay 0.3s
     });
+
+    const wrapper = document.getElementById("wrapper");
 
     // 1. Target date: 22 Oktober 2025, pukul 11:00 WITA (UTC+8)
     const targetDate = new Date('2025-10-22T03:00:00Z');
@@ -405,6 +423,7 @@ flex flex-col items-center justify-center text-center p-6">
         body: JSON.stringify(data),
         headers: { "Content-Type": "application/json" }
       });
+
 
       alert("Ucapan terkirim!");
       e.target.reset();

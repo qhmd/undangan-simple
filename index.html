@@ -536,25 +536,6 @@ flex flex-col items-center justify-center text-center p-6" data-aos="zoom-in" da
 
     updateCountdown(); // jalankan langsung
     const interval = setInterval(updateCountdown, 1000);
-
-    document.getElementById("ucapanForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      const data = {
-        nama: e.target.nama.value,
-        pesan: e.target.pesan.value
-      };
-
-      await fetch("https://script.google.com/macros/s/AKfycbxntFrA5lsgMhvjnmiUuA3B5T8Gr_sM8EFf2-wF1Y9UVelsXIviw9Xs_3PNxfQsUo8rPw/exec", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" }
-      });
-
-
-      alert("Ucapan terkirim!");
-      e.target.reset();
-    });
   </script>
 </body>
 

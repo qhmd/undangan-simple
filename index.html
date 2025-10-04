@@ -453,15 +453,12 @@ flex flex-col items-center justify-center text-center p-6" data-aos="zoom-in" da
       loadingContent.classList.remove("hidden");
 
       try {
-        const res = await fetch('https://undangan-simple-five.vercel.app/api/proxy.js', {
-          redirect: "follow",
-          headers: {
-            'Content-Type': 'text/plain',
-          },
-          mode: "no-cors",
-
-          body: JSON.stringify(form),
+        const res = await fetch('https://undangan-simple-five.vercel.app/api/proxy', {
           method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(form),
         });
 
         if (!res.ok) throw new Error('Respon server tidak OK');
@@ -470,16 +467,15 @@ flex flex-col items-center justify-center text-center p-6" data-aos="zoom-in" da
         successContent.classList.remove("hidden");
 
         form.reset();
-
         setTimeout(() => modal.classList.add("hidden"), 2000);
+
       } catch (error) {
         console.error("Gagal mengirim:", error);
         loadingContent.classList.add("hidden");
         errorContent.classList.remove("hidden");
-
-        // Tutup otomatis setelah 3 detik
         setTimeout(() => modal.classList.add("hidden"), 3000);
       }
+
     });
   </script>
 

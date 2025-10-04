@@ -110,7 +110,7 @@ confirmBtn.addEventListener("click", async () => {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries()); // ubah jadi object
         console.log(data)
-        const res = await fetch("https://undangan-simple-five.vercel.app/api/proxy", {
+        const res = await fetch("https://wedding-fammy.vercel.app/api/proxy", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -1,5 +1,6 @@
 AOS.init();
 const openBtn = document.getElementById("openBtn");
+const btnMusic = document.getElementById("btnMusic");
 const sections = document.querySelectorAll("section:not(#cover)");
 
 openBtn.addEventListener("click", () => {
@@ -7,7 +8,9 @@ openBtn.addEventListener("click", () => {
         sec.classList.remove("hidden")
         void sec.offsetWidth
     });
+    btnMusic.classList.remove("hidden");
     openBtn.classList.add("hidden");
+    bgMusic.play().catch(err => console.warn('Autoplay blocked?', err));
     AOS.refresh();
     setTimeout(() => {
         document.getElementById("sec_doa").scrollIntoView({ behavior: "smooth" });
@@ -131,3 +134,28 @@ confirmBtn.addEventListener("click", async () => {
         errorContent.classList.remove("hidden");
     }
 });
+
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("btnMusic");
+const soundIcon = btn.querySelector(".icon-sound");
+const mutedIcon = btn.querySelector(".icon-muted");
+
+
+function toggleMute() {
+    music.muted = !music.muted;
+    if (music.muted) {
+        soundIcon.classList.add("hidden");
+        mutedIcon.classList.remove("hidden");
+    } else {
+        soundIcon.classList.remove("hidden");
+        mutedIcon.classList.add("hidden");
+    }
+}
+
+const params = new URLSearchParams(window.location.search);
+const nama = params.get('nama');
+
+// Ganti teks berdasarkan parameter
+if (nama) {
+    document.querySelector('.nama-tamu').textContent = nama;
+}

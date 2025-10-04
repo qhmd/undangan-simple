@@ -56,6 +56,7 @@
 </head>
 
 <body class="h-screen overflow-hidden bg-zinc-700 overflow-y-scroll">
+  <audio id="bgMusic" src="./audio/thankgodifoundyou.mp3" preload="auto" loop></audio>
   <main id="wrapper" class="h-screen snap-y snap-mandatory">
 
     <article class="flex justify-center">
@@ -63,32 +64,36 @@
 
         <!-- COVER -->
         <section id="cover" class="relative overflow-hidden h-screen snap-start">
-          <div class="h-screen bg-coklat w-full flex flex-col py-24 px-4 justify-around">
+          <div class="h-screen bg-coklat w-full flex flex-col py-24 px-4 items-center justify-center">
+
+            <img id="flowerTop" src="assets/flower-bottom.webp" class="w-35 mb-12" data-aos="fade-down"
+              data-aos-duration="1000">
+
             <div class="text-center">
 
               <!-- ISI UTAMA -->
-              <h1 class="mt-4 mb-2 text-[10px] lg:text-sm text-white tracking-[2px] font-sans">
+              <h1 class="mt-4 mb-2 text-[12px] lg:text-sm text-white tracking-[2px] font-sans">
                 THE WEDDING OF
               </h1>
-              <h1 class="text-white font-latin text-3xl lg:text-4xl">
-                Fammy Fathiyah <br>&<br> Muhammad Yahya S.A.P
-              </h1>
+              <div class="text-white items-center justify-center font-latin text-3xl lg:text-4xl">
+                Fammy Fathiyah<br>&<br>
+                <span class="block mt-3">Muhammad Yahya S.A.P</span>
+              </div>
             </div>
+            <img id="flowerTop" src="assets/flower-bottom.webp" class="w-35 mt-12 mb-6 -scale-y-[1]"
+              data-aos="fade-down" data-aos-duration="1000">
+
             <div class="flex flex-col items-center font-serif text-white mt-6">
               <p class="text-sm">Kepada Yth:</p>
               <p class="text-sm">Bapak/Ibu/Saudara/i</p>
               <p class="font-serif tracking-tight text-white text-base">
-                <b>Nama Tamu</b>
+                <b class="nama-tamu">Nama Tamu</b>
               </p>
-              <button id="openBtn" class="bg-coklatglp rounded-full px-4 py-2 mt-4 text-sm">
+              <button id="openBtn" class="bg-coklatglp rounded-full px-5 py-3 mt-4 text-sm">
                 Open Invitation
               </button>
             </div>
           </div>
-
-          <!-- Gambar Dekorasi -->
-          <img id="flowerTop" src="assets/flower-bottom.webp"
-            class="absolute top-10 left-1/2 -translate-x-1/2 flex w-35" data-aos="fade-down" data-aos-duration="1000">
 
           <img id="flowerLeft" src="assets/bawa_pembuka.webp"
             class="absolute bottom-[-25px] left-[-25px] w-30 opacity-0" data-aos="fade-up-right" data-aos-offset="50"
@@ -136,7 +141,7 @@
           </h1>
           <h1 class="text-center px-6 py-8" data-aos="fade-up" data-aos-duration="2500">
             Anak ke-6 dari dari pasangan
-            <br>Bapak Alm.Muchtar<br>
+            <br>Bapak Alm.&nbsp;Muchtar HK<br>
             Dan ibu Nahda
           </h1>
         </section>
@@ -158,8 +163,8 @@
           </h1>
           <h1 class="text-center px-6 py-8" data-aos="fade-up" data-aos-duration="2500">
             Anak Pertama dari pasangan
-            <br>Bapak H.Abdullah<br>
-            dan Ibu Hj.Haryani
+            <br>Bapak H.&nbsp;Abdullah<br>
+            dan Ibu Hj.&nbsp;Haryani
           </h1>
         </section>
 
@@ -170,7 +175,7 @@
           <div
             class="w-full h-full px-12 md:px-18 sm:px-8 px-8 pb-2 z-[99] flex justify-center items-center font-cinzel">
             <div class="w-[600px] h-[600px] max-w-full max-h-full rounded-[190px] border-2 border-yellow-800 bg-white/50 
-flex flex-col items-center justify-center text-center p-6" data-aos="zoom-in" data-aos-duration="2000">
+            flex flex-col items-center justify-center text-center p-6" data-aos="zoom-in" data-aos-duration="2000">
 
 
               <!-- AKAD NIKAH -->
@@ -240,10 +245,13 @@ flex flex-col items-center justify-center text-center p-6" data-aos="zoom-in" da
                 </div>
               </div>
 
-              <button
-                class="rounded-full bg-coklatglp text-white font-serif text-[13.5px] cursor-pointer mt-3 px-3 py-2"
-                data-aos-delay="400" data-aos="fade-up" data-aos-duration="2000">Add
-                to Calender</button>
+              <a href="https://calendar.google.com/calendar/u/0/r/eventedit?text=Akad+Nikah+Fammy+Fathiyah&dates=20251022T030000Z/20251022T090000Z&ctz=Asia/Makassar&details=Acara+Akad+Nikah&location=https://www.google.com/maps/search/Jl.+Bandang+No.56,+Talaka,+Kec.+Ma%27rang,+Kabupaten+Pangkajene+Dan+Kepulauan,+Sulawesi+Selatan+90653,+Indonesia"
+                target="_blank" rel="noopener noreferrer"
+                class="rounded-full bg-coklatglp text-white font-serif text-[13.5px] cursor-pointer mt-3 px-3 py-2 block text-center"
+                data-aos-delay="400" data-aos="fade-up" data-aos-duration="2000">
+                Add to Calendar
+              </a>
+
             </div>
           </div>
           <div class="absolute bottom-0 left-0" data-aos="fade-up-right" data-aos-duration="2000">
@@ -270,8 +278,7 @@ flex flex-col items-center justify-center text-center p-6" data-aos="zoom-in" da
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3976.3660843166085!2d119.546406827867!3d-4.70630868225208!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbe49cf946b6577%3A0xbde56661904dbfd3!2sJl.%20Bandang%20No.56%2C%20Talaka%2C%20Kec.%20Ma&#39;rang%2C%20Kabupaten%20Pangkajene%20Dan%20Kepulauan%2C%20Sulawesi%20Selatan%2090653!5e0!3m2!1sid!2sid!4v1759577124143!5m2!1sid!2sid"
             width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+            referrerpolicy="no-referrer-when-downgrade" data-aos="fade-down" data-aos-duration="2500"></iframe>
           <p class="text-center mt-2 text-[12px] font-serif" data-aos="fade-up" data-aos-duration="2300">Mattoanging
             Jl.Bandang <br>Kel.Talaka Kec.Ma'rang Kab.
             Pangkep</p>
@@ -310,7 +317,7 @@ flex flex-col items-center justify-center text-center p-6" data-aos="zoom-in" da
                 required />
 
               <textarea name="pesan" placeholder="Ucapan"
-                class="py-1 px-2 border border-gray-400 rounded-sm focus:bg-white/50 focus:border-yellow-800 outline-none w-full h-24 resize-none"></textarea>
+                class="py-1 px-2 border border-gray-400 rounded-sm focus:bg-white/50 focus:border-yellow-800 outline-none w-full h-24 resize-none" required></textarea>
 
               <!-- Button -->
               <button type="submit"
@@ -323,18 +330,17 @@ flex flex-col items-center justify-center text-center p-6" data-aos="zoom-in" da
 
 
         <section id="thanks_to_wed"
-          class="hidden min-h-screen snap-start bg-center bg-cover bg-lastslide flex flex-col px-8 items-center justify-center relative">
+          class="hidden h-screen snap-start bg-center bg-cover bg-lastslide flex flex-col px-8 items-center justify-center relative">
           <div class="text-center font-serif mx-2 text-black/60" data-aos="fade-down" data-aos-duration="1500">
             We would like to thank for sharing in our wedding Celebration. We are grateful for your presence, warm, and
             wishes. we look forward to our future together and making more memories with you.
           </div>
 
           <div class="font-wedding text-2xl text-yellow-800/60 mt-4 mb-8" data-aos="fade-down" data-aos-duration="1600">
-            Fammy & Yahya</div>
+            Fammy & Yaya</div>
           <div class="font-serif font-bold text-[8px] text-black/40" data-aos="fade-up" data-aos-duration="1500">Music :
           </div>
-          <div class="font-serif text-[10px] text-black/40 mb-14" data-aos="fade-up" data-aos-duration="1600">Menjaga
-            Hati</div>
+          <div class="font-serif text-[10px] text-black/40 mb-14" data-aos="fade-up" data-aos-duration="1600">Thank God I Found You</div>
 
           <img id="flowerLeft" src="assets/middle-bottom.webp" class="absolute bottom-0">
 
@@ -352,6 +358,29 @@ flex flex-col items-center justify-center text-center p-6" data-aos="zoom-in" da
           <img src="assets/bf-1.webp" class="absolute right-37 w-[90px] scale-x-[-1] -bottom-2 animate-leaf-right">
           <img src="assets/bf-3.webp" class="absolute right-45 w-[90px] scale-x-[-1] -bottom-2 animate-leaf-right">
         </section>
+
+
+        <!-- Play Icon -->
+        <!-- Floating button -->
+        <button id="btnMusic" onclick="toggleMute()"
+          class="fixed bottom-5 right-5 w-10 h-10 hidden rounded-full bg-yellow-800/60 shadow-lg flex items-center justify-center z-99 transition hover:bg-blue-700">
+
+          <!-- Play Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256"
+            class="icon-muted hidden text-white" fill="currentColor">
+            <path
+              d="M184,152V104a8,8,0,0,1,16,0v48a8,8,0,0,1-16,0Zm40-72a8,8,0,0,0-8,8v80a8,8,0,0,0,16,0V88A8,8,0,0,0,224,80ZM53.92,34.62A8,8,0,1,0,42.08,45.38L73.55,80H32A16,16,0,0,0,16,96v64a16,16,0,0,0,16,16H77.25l69.84,54.31A8,8,0,0,0,160,224V175.09l42.08,46.29a8,8,0,1,0,11.84-10.76Zm92.16,77.59A8,8,0,0,0,160,106.83V32a8,8,0,0,0-12.91-6.31l-39.85,31a8,8,0,0,0-1,11.7Z" />
+          </svg>
+
+          <!-- Pause Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256"
+            class="icon-sound text-white" fill="currentColor">
+            <path
+              d="M160,32V224a8,8,0,0,1-12.91,6.31L77.25,176H32a16,16,0,0,1-16-16V96A16,16,0,0,1,32,80H77.25l69.84-54.31A8,8,0,0,1,160,32Zm32,64a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V104A8,8,0,0,0,192,96Zm32-16a8,8,0,0,0-8,8v80a8,8,0,0,0,16,0V88A8,8,0,0,0,224,80Z" />
+          </svg>
+        </button>
+
+
       </div>
     </article>
   </main>
@@ -364,7 +393,7 @@ flex flex-col items-center justify-center text-center p-6" data-aos="zoom-in" da
     <!-- Modal -->
     <div class="relative w-full cursor-pointer pointer-events-none transition my-auto p-4">
       <div
-        class="w-full bg-white/80 border border-yellow-800 cursor-default pointer-events-auto dark:bg-gray-800 relative rounded-xl mx-auto max-w-sm text-center px-6 py-8">
+        class="w-full bg-white/80 border border-yellow-800 cursor-default pointer-events-auto relative rounded-xl mx-auto max-w-sm text-center px-6 py-8">
 
         <!-- Tombol X -->
         <button id="closeModalBtn" tabindex="-1" type="button" class="absolute top-2 right-2">
